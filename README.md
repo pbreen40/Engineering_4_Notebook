@@ -4,7 +4,8 @@
 
 ### Dice Roller
 
-#### Assignment: Create a Python program to run on your Pi that allows the user to roll/reroll a die by pressing ENTER and quit by pressing X and ENTER.
+#### Assignment:
+Create a Python program to run on your Pi that allows the user to roll/reroll a die by pressing ENTER and quit by pressing X and ENTER.
 
 #### Code:
 ```python
@@ -17,7 +18,7 @@ import time
 import keyboard
 min=1 #used for testing
 max=6
-active= True #my variables for my while loops to control when they are activr
+active= True #my variables for my while loops to control when they are active
 confirmState= False
 print ("Automatic Dice Roller") #my intial setups to give instructions
 print ("Press ENTER to roll")
@@ -38,3 +39,7 @@ while active==True:
                 print("Quit")
                 confirmState=False #disabled program completely 
 ```
+#### What to Remember:
+* Use pyautogui to detect key presses, https://pyautogui.readthedocs.io/en/latest/ 
+* The random library https://docs.python.org/3/library/random.html
+* Using delays is very important, but this could also be fixed using booleans which I would use for a longer program
