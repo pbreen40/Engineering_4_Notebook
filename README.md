@@ -13,7 +13,7 @@ Create a Python program to run on your Pi that allows the user to roll/reroll a 
 # Written by Philip
 
 import random
-import pyautogui 
+#import pyautogui 
 import time
 import keyboard
 min=1 #used for testing
@@ -24,7 +24,7 @@ print ("Automatic Dice Roller") #my intial setups to give instructions
 print ("Press ENTER to roll")
 print("Press X to Quit")
 while active==True:
-    if keyboard.is_pressed('enter'): #I'm using pyautogui which is a cool little tool I found that is helpful
+    if keyboard.is_pressed('enter'): #I'm using a keyboard libray but I also found pyautogui which is a cool little tool I found that is helpful
         print(random.randint(min, max))
         time.sleep(.2) #makes it so that when you press it it does not spam
     if keyboard.is_pressed('x'): #quit logic
