@@ -48,7 +48,7 @@ while active==True:
 ### Calculator 
 
 #### Assignment:
-Create a Python program to run on your Pi that allows the user to roll/reroll a die by pressing ENTER and quit by pressing X and ENTER.
+Write a program that gives you the sum, difference, quotient, and modulo of the two numbers.  The program asks the user for two numbers and then runs them through one function, five different times. 
 
 #### Code:
 ```python
@@ -84,6 +84,8 @@ while True:
         break #ends code
 ```
 #### What to Remember:
-* Use pyautogui to detect key presses, https://pyautogui.readthedocs.io/en/latest/ 
-* The random library https://docs.python.org/3/library/random.html
-* Using delays is very important, but this could also be fixed using booleans which I would use for a longer program
+* Use variable = input(PRINT STATEMENT) to take an input from the user
+* Use 115200 as the speed for PuTTY SSH
+* Shift + INS will paste into the SSH
+* You can give a function as many numbers or variables you want when you call it, as long as you define those variables when you create the function
+* Using return will return data to where ever you called the function
