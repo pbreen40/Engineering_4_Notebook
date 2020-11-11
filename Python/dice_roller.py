@@ -1,4 +1,4 @@
-# Automatic Dice Roer
+# Automatic Dice Roller
 # Written by Philip
 
 import random
