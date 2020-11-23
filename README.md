@@ -89,3 +89,44 @@ while True:
 * Shift + INS will paste into the SSH
 * You can give a function as many numbers or variables you want when you call it, as long as you define those variables when you create the function
 * Using return will return data to where ever you called the function
+
+### Quadratic Solver
+
+#### Assignment:
+Write a simple program that solves quadratic functions.
+ 
+
+#### Code:
+```python
+# Quadratic Solver
+# Written by Philip
+import math 
+def doMath(a,b,c): #Function used to do the math which is called in the prints
+    if(-4*a*c>b*b): #checks if the discriminant will be negative
+        discrimin = (math.sqrt(b*b-4*a*c)) #if not it get its
+        root1= (-b +discrimin)/a #finds the roots using quadratic formula
+        root2= (-b -discrimin)/a
+        roots = [root1,root2]#creates root array
+        return(roots)     #returns roots
+    
+
+
+while True:
+    # Take input from the user
+  
+
+    
+        print("Quadratic Solver")
+        print("Enter the coefficients for ax^2 + bx + c = 0")
+        a = int(input("Enter a: "))#Gathers first number   
+        b = int(input("Enter b: "))#gathers second number
+        c = int(input("Enter c: "))#gathers third number
+        print("Roots:", doMath(a,b,c))#returns Roots: None if no roots, but returns the roots if there are some
+        
+        
+        break #ends code
+```
+#### What to Remember:
+* Arrays can be super helpful, espescially when dealing with multiple numbers that are all related. 
+* You can return an array
+
