@@ -145,7 +145,7 @@ print(*letter_list, sep='\n')
 ```
 #### What to Remember:
 * Use sep='\n' to seperate each line in a list
-* Use input.replace("<x>", "<y>") to replace characters in a list 
+* Use input.replace("x", "y") to replace characters in a list 
 
 
 
