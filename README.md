@@ -147,5 +147,83 @@ print(*letter_list, sep='\n')
 * Use sep='\n' to seperate each line in a list
 * Use input.replace("x", "y") to replace characters in a list 
 
+### Hangman
+
+#### Assignment:
+Write a program that lets the user play hangman with a computer!
+ 
+
+#### Code:
 
 
+```python
+import random
+health = 5 #amount of health
+letterInput = " "
+word = ["swag", "litty", "keyboard", "mouse", "water", "computer", "python"]#words that can be chosen 
+answer = word[random.randint(0,len(word)-1)]#picks a word randomly
+answers = []#guesses
+win = None#used to end game if they won/lost
+guess = 0#correct guesses
+letter=len(set(answer))
+for x in range(len(answer)):
+    answers.extend('_') 
+print("Hangman")
+
+def hangman(health):   #function that prints out the body(depressing)
+    if health==0:
+        print("---┐")
+    if health==1:
+        print("---┐")
+        print("   O")
+    if health==2:
+        print("---┐")
+        print("   O")
+        print("   |")
+    if health==3:
+        print("---┐")
+        print("   O")
+        print("   |")
+        print(" --|--")
+    if health==4:
+        print("---┐")
+        print("   O")
+        print("   |")
+        print(" --|--")
+        print("   |")
+    if health==5:
+        print("---┐")
+        print("   O")
+        print("   |")
+        print(" --|--")
+        print("   |")
+        print("  | |")
+
+
+while health>0: #while alive
+    letterInput = input("Guess: ")#asks for guess
+    if letterInput in answer:#checks if its in the answer
+        print("Correct!")
+        for x in range(len(answer)):
+            if letterInput == answer[x]:
+                answers[x] = letterInput
+        print(answers)
+        guess = guess + 1
+        if guess == letter:#if amount of right guesses=amount of possible right guesses you win
+            win = True
+            break
+    else:   
+        health = health-1#subtracts health and asks to try again
+        print("Incorrect, try again")
+        print("You have " + str(health) + " health")
+        hangman(health)
+
+if win == True:
+    print("GG You Won!")
+else:
+    print("You Lost :(")
+```
+
+#### What to Remember:
+* Functions can be super useful, this was an example of that
+* Make sure you always double check your code after making a minor or major change so you know it still works and can fix it now rather than down the line
