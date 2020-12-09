@@ -130,3 +130,22 @@ while True:
 * Arrays can be super helpful, espescially when dealing with multiple numbers that are all related. 
 * You can return an array
 
+### Strings and Loops
+
+#### Assignment:
+Write a program that recieves an input from a user and splits each character into a line and prints it out.
+ 
+
+#### Code:
+```python
+input = str(input("Enter your phrase: "))
+input = input.replace(" ", "-") 
+letter_list = list(input) 
+print(*letter_list, sep='\n') 
+```
+#### What to Remember:
+* Use sep='\n' to seperate each line in a list
+* Use input.replace("x", "y") to replace characters in a list 
+
+
+
