@@ -254,3 +254,34 @@ done
 #### What to Remember:
 * Doing research to fix your problems is very important
 * You can just turn on a pin and tap the LEDs wire to find it(Thanks Vann)
+
+
+
+### Python GPIO Pins
+
+#### Assignment:
+Use a python script to make two LEDs blink on and off 10 times.
+ 
+
+#### Code:
+
+
+```python
+  
+import RPi.GPIO as GPIO 
+from time import sleep 
+GPIO.setwarnings(False) # Everything breaks when this is removed
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW) # Pin 8 is an output
+for x in range(10):   #loop runs 10 times
+ GPIO.output(8, GPIO.HIGH) # Turn on
+ sleep(1) # Sleep for 1 second
+ GPIO.output(8, GPIO.LOW) # Turn off
+ sleep(1) # Sleep for 1 second
+```
+
+#### What to Remember:
+* https://raspberrypihq.com/making-a-led-blink-using-the-raspberry-pi-and-python/ Was very helpful
+* You can just use one pin and plug the LEDs into the bus!
+
+
