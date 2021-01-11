@@ -227,3 +227,30 @@ else:
 #### What to Remember:
 * Functions can be super useful, this was an example of that
 * Make sure you always double check your code after making a minor or major change so you know it still works and can fix it now rather than down the line
+
+### Bash GPIO Pins
+
+#### Assignment:
+Use a bash script to make two LEDs blink on and off 10 times.
+ 
+
+#### Code:
+
+
+```python
+gpio mode 1 out
+gpio mode 0 out
+for (( c=0; c<=9; c++ ))
+do  
+   gpio write 1 1   
+   gpio write 0 1
+   sleep .5
+   gpio write 1 0
+   gpio write 0 0
+   sleep .5
+done
+```
+
+#### What to Remember:
+* Doing research to fix your problems is very important
+* You can just turn on a pin and tap the LEDs wire to find it(Thanks Vann)
