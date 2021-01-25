@@ -227,3 +227,61 @@ else:
 #### What to Remember:
 * Functions can be super useful, this was an example of that
 * Make sure you always double check your code after making a minor or major change so you know it still works and can fix it now rather than down the line
+
+### Bash GPIO Pins
+
+#### Assignment:
+Use a bash script to make two LEDs blink on and off 10 times.
+ 
+
+#### Code:
+
+
+```python
+gpio mode 1 out
+gpio mode 0 out
+for (( c=0; c<=9; c++ ))
+do  
+   gpio write 1 1   
+   gpio write 0 1
+   sleep .5
+   gpio write 1 0
+   gpio write 0 0
+   sleep .5
+done
+```
+
+#### What to Remember:
+* Doing research to fix your problems is very important
+* You can just turn on a pin and tap the LEDs wire to find it(Thanks Vann)
+
+
+
+### Python GPIO Pins
+
+#### Assignment:
+Use a python script to make two LEDs blink on and off 10 times.
+ 
+
+#### Code:
+
+
+```python
+  
+import RPi.GPIO as GPIO 
+from time import sleep 
+GPIO.setwarnings(False) # Everything breaks when this is removed
+GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
+GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW) # Pin 8 is an output
+for x in range(10):   #loop runs 10 times
+ GPIO.output(8, GPIO.HIGH) # Turn on
+ sleep(1) # Sleep for 1 second
+ GPIO.output(8, GPIO.LOW) # Turn off
+ sleep(1) # Sleep for 1 second
+```
+
+#### What to Remember:
+* https://raspberrypihq.com/making-a-led-blink-using-the-raspberry-pi-and-python/ Was very helpful
+* You can just use one pin and plug the LEDs into the bus!
+
+
