@@ -285,3 +285,15 @@ for x in range(10):   #loop runs 10 times
 * You can just use one pin and plug the LEDs into the bus!
 
 
+### GPIO Pins SSH
+
+#### Assignment:
+Use SSH to remotely control LEDs.
+ 
+
+
+#### What to Remember:
+* This is really really cool, it felt so cool to be controlled the light from across my house. 
+* I had to make sure I took a picture of my Pis IP in case I lost it.
+
+
