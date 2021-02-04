@@ -305,6 +305,7 @@ Use an accelerometer to gather acceleration data and display it on an OLED displ
 #### Code:
 
 ```python
+  
 import time
 import Adafruit_SSD1306
 import Adafruit_LSM303
@@ -358,7 +359,10 @@ while True:
 	disp.display()
 
 	#sleep for debug, I've found it to be useful in the past
-	time.sleep(.15)```
+	time.sleep(.15)
+```
+	
+
 #### What to Remember:
 * Delays are super important for debugging or even to get your code to work.
 * The PI will throw errors if there is any faulty wiring
