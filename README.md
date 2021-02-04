@@ -366,3 +366,33 @@ while True:
 #### What to Remember:
 * Delays are super important for debugging or even to get your code to work.
 * The PI will throw errors if there is any faulty wiring
+
+
+
+### Hello Flask
+
+#### Assignment:
+Host a website using your pi.
+ 
+
+#### Code:
+
+```python
+  from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+     return "hello world!"
+
+if __name__ == "__main__":
+     app.run(host="0.0.0.0", port=80)
+     ### GPIO Pins I2C
+
+```
+	
+
+#### What to Remember:
+* This was super easy as long as you followed the directions, you just have to make sure you're on the same network.
+* The 0.0.0.0 isn't a place holder for your PI's IP address, make sure you leave it that way! 
