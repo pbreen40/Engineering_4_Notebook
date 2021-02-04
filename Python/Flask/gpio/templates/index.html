@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+     <title>GPIO with Flask!</title>
+<style>
+
+button{
+	
+	    
+        display: block;
+	height: 100px;
+	border-style: dashed solid;
+	padding: 14px 28px;
+	font-size: 16px;
+	color: #ecf2f9;
+}
+
+button:active{
+	position:relative;
+	top:1px;
+}
+
+.btn1 {
+	background-color: #9c9c9c; 
+	
+} 
+
+.btn2 {
+	background-color: #9c9c9c;
+	
+}
+
+.btn3 {
+	background-color: #9c9c9c;
+}
+
+.btn4 {
+	background-color: #9c9c9c;
+}
+
+
+body{
+background-color: #0A0A0A;
+}
+
+</style>
+</head>
+<body>
+{{msg}}
+
+<form method="POST">
+     <button type="submit" name="button1" class="button btn1" value="button1">LED 1 On</button>
+     <button type="submit" name="button2" class="button btn2" value="button2">LED 1 Off</button>
+     <button type="submit" name="button3" class="button btn3" value="button3">LED 2 On</button>
+     <button type="submit" name="button4" class="button btn4" value="button4">LED 2 Off</button>
+
+</form>
+</body>
+</html>
