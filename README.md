@@ -296,4 +296,179 @@ Use SSH to remotely control LEDs.
 * This is really really cool, it felt so cool to be controlled the light from across my house. 
 * I had to make sure I took a picture of my Pis IP in case I lost it.
 
+### GPIO Pins I2C
 
+#### Assignment:
+Use an accelerometer to gather acceleration data and display it on an OLED display.
+ 
+
+#### Code:
+
+```python
+  
+import time
+import Adafruit_SSD1306
+import Adafruit_LSM303
+
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+
+RST = 24 
+accelerometer = Adafruit_LSM303.LSM303() # setting up accelerometer
+disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3d) # setting up display
+disp.begin() #starting display, clearing display
+disp.clear()
+disp.display()
+
+width = disp.width
+height = disp.height 
+image = Image.new('1', (width, height))
+
+draw = ImageDraw.Draw(image) 
+draw.rectangle((0,0,width,height), outline=0, fill=0) # clears screen
+
+
+padding = 3
+shape_width = 20
+top = padding
+bottom = height - padding
+x = padding
+font = ImageFont.load_default() 
+
+
+
+while True:   
+	accel, mag = accelerometer.read() # gathers accelerometer data
+	accel_x, accel_y, accel_z = accel 
+	
+	
+
+	draw.text((x, top), "Accelerometer Data:", font=font, fill=255) 
+	draw.text((x, top + 10), "Accel x ={0}".format(round(accel_x / 100, 3)), font=font, fill=255) # prints x 
+	draw.text((x, top + 20), "Accel y ={0}".format(round(accel_y / 100, 3)), font=font, fill=255) # prints y
+	draw.text((x, top + 30), "Accel z ={0}".format(round(accel_z / 100, 3)), font=font, fill=255) # prints z
+	
+	
+	disp.image(image) 
+	disp.display()
+
+	
+	draw.rectangle((100, 12, 55, 50), outline=0, fill=0) 
+	disp.image(image)
+	disp.display()
+
+	#sleep for debug, I've found it to be useful in the past
+	time.sleep(.15)
+```
+	
+
+#### What to Remember:
+* Delays are super important for debugging or even to get your code to work.
+* The PI will throw errors if there is any faulty wiring
+
+
+
+### Hello Flask
+
+#### Assignment:
+Host a website using your pi.
+ 
+
+#### Code:
+
+```python
+  from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+     return "hello world!"
+
+if __name__ == "__main__":
+     app.run(host="0.0.0.0", port=80)
+     ### GPIO Pins I2C
+
+```
+	
+
+#### What to Remember:
+* This was super easy as long as you followed the directions, you just have to make sure you're on the same network.
+* The 0.0.0.0 isn't a place holder for your PI's IP address, make sure you leave it that way! 
+
+
+### Flask GPIO
+
+#### Assignment:
+Turn 2 LEDs on and off using a website hosted on the pi.
+ 
+
+#### Website Code:
+
+```python
+  <!doctype html>
+<html>
+<head>
+     <title>GPIO with Flask!</title>
+<style>
+
+button{
+	
+	    
+        display: block;
+	height: 100px;
+	border-style: dashed solid;
+	padding: 14px 28px;
+	font-size: 16px;
+	color: #ecf2f9;
+}
+
+button:active{
+	position:relative;
+	top:1px;
+}
+
+.btn1 {
+	background-color: #9c9c9c; 
+	
+} 
+
+.btn2 {
+	background-color: #9c9c9c;
+	
+}
+
+.btn3 {
+	background-color: #9c9c9c;
+}
+
+.btn4 {
+	background-color: #9c9c9c;
+}
+
+
+body{
+background-color: #0A0A0A;
+}
+
+</style>
+</head>
+<body>
+{{msg}}
+
+<form method="POST">
+     <button type="submit" name="button1" class="button btn1" value="button1">LED 1 On</button>
+     <button type="submit" name="button2" class="button btn2" value="button2">LED 1 Off</button>
+     <button type="submit" name="button3" class="button btn3" value="button3">LED 2 On</button>
+     <button type="submit" name="button4" class="button btn4" value="button4">LED 2 Off</button>
+
+</form>
+</body>
+
+```
+	
+
+#### What to Remember:
+* This was super cool, I had a good time relearning CSS, https://w3schools.com/ is very helpful for anything website related.
+* You have to make sure all of your variable names are the exact same though!
