@@ -470,5 +470,5 @@ background-color: #0A0A0A;
 	
 
 #### What to Remember:
-* This was super easy as long as you followed the directions, you just have to make sure you're on the same network.
-* The 0.0.0.0 isn't a place holder for your PI's IP address, make sure you leave it that way! 
+* This was super cool, I had a good time relearning CSS, https://w3schools.com/ is very helpful for anything website related.
+* You have to make sure all of your variable names are the exact same though!
