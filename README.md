@@ -472,3 +472,33 @@ background-color: #0A0A0A;
 #### What to Remember:
 * This was super cool, I had a good time relearning CSS, https://w3schools.com/ is very helpful for anything website related.
 * You have to make sure all of your variable names are the exact same though!
+
+### Pi Camera
+
+#### Assignment:
+Use a Pi to take pictures with effects
+ 
+
+#### Code:
+
+```python
+  import time
+import picamera
+
+print("running!")
+
+with picamera.PiCamera() as camera:
+    camera.resolution = (1024, 768)
+    camera.start_preview()
+    # Camera warm-up time
+    time.sleep(2)
+    camera.capture('test1.jpg')
+
+print("Done")
+
+```
+	
+
+#### What to Remember:
+* This was neat, it kind of reminded me of the old macbook filters. 
+* Use https://picamera.readthedocs.io/en/release-1.10/recipes1.html and https://picamera.readthedocs.io/en/release-1.10/api_camera.html#picamera.camera.PiCamera.image_effect, they get you most of the way there.
