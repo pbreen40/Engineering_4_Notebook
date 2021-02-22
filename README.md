@@ -502,3 +502,37 @@ print("Done")
 #### What to Remember:
 * This was neat, it kind of reminded me of the old macbook filters. 
 * Use https://picamera.readthedocs.io/en/release-1.10/recipes1.html and https://picamera.readthedocs.io/en/release-1.10/api_camera.html#picamera.camera.PiCamera.image_effect, they get you most of the way there.
+
+
+
+### Copy Pasta Detector
+
+#### Assignment:
+Use a Pi and camera to create a motion detector.
+ 
+
+#### Code:
+
+```python
+from gpiozero import MotionSensor
+from picamera import PiCamera
+import datetime
+
+pir = MotionSensor(4)
+camera = PiCamera()
+now = datetime.datetime.now()
+filename = "intruder_" + str(now).replace(" ", "_") + ".h264"
+
+while True:
+	pir.wait_for_motion()
+	print("Motion detected!")
+	camera.start_recording(filename)
+	pir.wait_for_no_motion()
+	camera.stop_preview()
+
+```
+	
+
+#### What to Remember:
+* This was super duper cool. It shows how much we can actually do with this neat little cameras. 
+* In line 8 we had to make sure we replaced the space with an underscore in the file names.
