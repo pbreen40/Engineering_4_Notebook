@@ -1,0 +1,68 @@
+
+
+
+
+!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plane Emitted Data Obtainer</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div >
+                        <h1 class="m-0">
+							<a href="#">
+								<img class="header-logo-image" src="dist/images/logo.png" alt="Logo" width="150" height="100">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="title">
+                <div class="container">
+                    <div class="title-inner">
+						<div class="title-copy">
+	                        <h1 class="hero-title mt-0">Plane Emitted Data Obtainer</h1>
+	                        
+	                        <div class="hero-cta">
+                                <form method="POST">
+
+
+                                    <button type="submit" name="button1" class="button button-primary" value="button1">Drop</button>
+                                    <button type="submit" name="button2" class="button" value="button2">Drop and Deploy</button>
+                                    <button type="submit" name="button3" class="button button-two" value="button3">Deploy</button>
+
+
+                              
+                                </form>
+                        </div>
+						</div>
+						
+                            <img  src="dist/images/plane thing.png" alt="Logo" width="700" > 
+    
+						</div>
+                    </div>
+                </div>
+            </section>			
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-inner">          
+                    <div class="footer-bottom">Philip Breen & Vann Wellmon</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
